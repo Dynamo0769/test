@@ -1,1 +1,98 @@
+/* --- Global & Font Setup --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Serif+Display:ital,wght@0,400..700;1,400..700&display=swap');
 
+:root {
+    --bg-dark: #110F13;
+    --primary-bg: #1A1D21;
+    --secondary-bg: #2a2e34;
+    --border-color: #333;
+    --text-color: #FFFFFF;
+    --text-muted: #9B9C9E;
+    --text-highlight: #DE2002;
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Serif Display', serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-primary); background-color: var(--bg-dark); color: var(--text-color); }
+
+/* --- Headers --- */
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background-color: rgba(17, 15, 19, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
+.logo-main { height: 50px; }
+.header-right { display: flex; align-items: center; gap: 20px; }
+.main-nav ul { list-style: none; display: flex; gap: 40px; }
+.main-nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+.main-nav a.active, .main-nav a:hover { color: var(--text-highlight); }
+.btn-header-primary { border: 1px solid var(--text-highlight); color: var(--text-highlight); padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+.btn-header-primary:hover { background-color: var(--text-highlight); color: white; }
+
+/* --- Hero Section --- */
+.hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 20px 20px 20px; background: linear-gradient(rgba(17,15,19,0.7), var(--bg-dark)), url('../assets/hero-background.png') no-repeat center center/cover; }
+.hero-content { max-width: 800px; }
+.hero-welcome { color: var(--text-highlight); font-weight: 700; margin-bottom: 10px; letter-spacing: 1px; }
+.hero-content h1 { font-family: var(--font-serif); font-size: 56px; margin-bottom: 20px; line-height: 1.2; }
+.hero-content .hero-subtitle { font-size: 18px; color: var(--text-muted); margin-bottom: 30px; }
+.btn-hero { background: transparent; border: 1px solid var(--text-highlight); color: var(--text-highlight); padding: 15px 35px; border-radius: 25px; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s; }
+.btn-hero:hover { background-color: var(--text-highlight); color: white; }
+
+/* --- About Us Section --- */
+.about-us-section { padding: 100px 50px; background-color: var(--bg-dark); }
+.about-us-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: auto; }
+.about-text .section-tag { color: var(--text-highlight); margin-bottom: 10px; font-weight: 600; }
+.about-text h2 { font-family: var(--font-serif); font-size: 48px; margin-bottom: 20px; }
+.about-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+.btn-explore { background: var(--text-highlight); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; display: inline-block; }
+.about-image { position: relative; }
+.about-image::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg-dark); clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%); }
+.about-image img { width: 100%; border-radius: 16px; display: block; }
+
+/* --- Features Section --- */
+.features-section { padding: 100px 50px; text-align: center; }
+.features-section > h2 { font-family: var(--font-serif); font-size: 40px; max-width: 800px; margin: 0 auto 60px auto; line-height: 1.3; }
+.features-content { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; max-width: 1400px; margin: auto; }
+.feature-item { padding: 20px; }
+.feature-item i { font-size: 2.5rem; color: var(--text-highlight); margin-bottom: 15px; }
+.feature-item h3 { font-size: 20px; margin-bottom: 10px; }
+.feature-item p { color: var(--text-muted); line-height: 1.6; }
+.feature-item:nth-child(1), .feature-item:nth-child(2) { text-align: right; }
+.feature-item:nth-child(4), .feature-item:nth-child(5) { text-align: left; }
+.feature-phone { grid-column: 3 / 4; }
+.feature-phone img { max-width: 100%; }
+
+/* --- Shop Section --- */
+.content-area { padding: 80px 50px; }
+.content-area h1 { text-align: center; font-size: 40px; margin-bottom: 40px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.product-card { background: #fff; border-radius: 16px; overflow: hidden; color: #000; text-align: center;}
+.product-card img { width: 100%; height: 220px; object-fit: cover; background-color: #f0f0f0; }
+.product-info { padding: 20px; }
+.product-info h3 { margin: 0 0 10px 0; }
+.product-info p { color: #666; font-size: 14px; }
+.btn-details { display: inline-block; text-align: center; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration: none; background-color: #110F13; color: var(--text-muted); margin-top: 15px; }
+.view-more-container { text-align: center; margin-top: 40px; }
+.btn-view-more { background: transparent; border: 1px solid var(--text-muted); color: var(--text-muted); padding: 15px 35px; border-radius: 25px; text-decoration: none; font-weight: 700; }
+
+/* --- Footer --- */
+.main-footer { background-color: #110F13; padding: 60px 50px 20px 50px; }
+.footer-content { display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; margin-bottom: 40px; max-width: 1400px; margin-left: auto; margin-right: auto;}
+.logo-footer { height: 40px; margin-bottom: 15px; }
+.footer-column h4 { font-size: 14px; margin-bottom: 20px; text-transform: uppercase; color: var(--text-muted); }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a, .footer-column p { color: var(--text-color); text-decoration: none; font-size: 14px; }
+.social-icons { display: flex; gap: 20px; } .social-icons a { font-size: 20px; color: var(--text-muted); }
+.footer-bottom { border-top: 1px solid var(--border-color); text-align: center; padding-top: 20px; color: var(--text-muted); font-size: 14px; display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin-left: auto; margin-right: auto;}
+.footer-bottom-logo { height: 30px; }
+
+/* --- Other Pages (Login, Product Details) --- */
+/* ... (These styles can be added or refined as we build those pages) ... */
+
+/* --- Mobile Responsive --- */
+@media (max-width: 900px) {
+    .main-header { flex-direction: column; gap: 15px; }
+    .about-us-content, .features-content, .footer-content { grid-template-columns: 1fr; }
+    .about-image { display: none; }
+    .feature-phone { order: -1; margin-bottom: 40px; }
+    .feature-item:nth-child(1), .feature-item:nth-child(2), .feature-item:nth-child(4), .feature-item:nth-child(5) { text-align: center; }
+}
